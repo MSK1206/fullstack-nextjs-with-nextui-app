@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^1.6.0",
@@ -38,9 +39,11 @@
     "@storybook/addon-links": "^8.0.8",
     "@storybook/addon-onboarding": "^8.0.8",
     "@storybook/blocks": "^8.0.8",
+    "@storybook/manager-api": "^8.0.8",
     "@storybook/nextjs": "^8.0.8",
     "@storybook/react": "^8.0.8",
     "@storybook/test": "^8.0.8",
+    "@storybook/theming": "^8.0.8",
     "@types/bcrypt": "^5.0.2",
     "@types/cheerio": "^0.22.35",
     "@types/highlightjs": "^9.12.6",

@@ -1,8 +1,12 @@
 import type { Preview } from '@storybook/react';
-import '../src/app/styles/tailwind.css'
+import { themes } from '@storybook/theming';
+import '../src/app/styles/tailwind.css';
 
 const preview: Preview = {
   parameters: {
+    docs: {
+      theme: themes.dark,
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
