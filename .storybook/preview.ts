@@ -4,8 +4,8 @@ import '../src/app/styles/tailwind.css';
 
 const preview: Preview = {
   parameters: {
-    docs: {
-      theme: themes.dark,
+    nextjs: {
+      appDirectory: true,
     },
     controls: {
       matchers: {
