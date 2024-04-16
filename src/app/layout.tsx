@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Zen_Antique } from 'next/font/google';
-import { Providers } from '@/app/components/providers/NextuiProviders';
-import './styles/tailwind.css';
+import { NextuiThemeProviders } from '@/app/components/providers/NextuiThemeProviders';
 import './globals.css';
 
 const zen = Zen_Antique({
@@ -24,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={zen.className}>
-        <Providers>{children}</Providers>
+        <NextuiThemeProviders>{children}</NextuiThemeProviders>
       </body>
     </html>
   );
