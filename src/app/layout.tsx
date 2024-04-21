@@ -1,12 +1,14 @@
 import type { Metadata } from 'next';
 import { Zen_Antique } from 'next/font/google';
 import { NextuiThemeProviders } from '@/app/components/providers/NextuiThemeProviders';
+import { Suspense } from 'react';
+import Loading from './loading';
 import './globals.css';
 
 const zen = Zen_Antique({
   weight: '400',
   display: 'swap',
-  preload: false,
+  preload: true,
   subsets: ['latin'],
 });
 
@@ -21,9 +23,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning={true}>
       <body className={zen.className}>
-        <NextuiThemeProviders>{children}</NextuiThemeProviders>
+        <NextuiThemeProviders>
+          <Suspense fallback={<Loading />}>{children}</Suspense>
+        </NextuiThemeProviders>
       </body>
     </html>
   );
