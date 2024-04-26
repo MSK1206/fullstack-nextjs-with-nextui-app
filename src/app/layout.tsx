@@ -4,6 +4,8 @@ import { NextuiThemeProviders } from '@/app/components/providers/NextuiThemeProv
 import { Suspense } from 'react';
 import Loading from './loading';
 import './globals.css';
+import NextuiNavbar from './components/atomic/organisms/NextuiNavbar';
+import MotionWrapper from './components/providers/MotionWrapper';
 
 const zen = Zen_Antique({
   weight: '400',
@@ -26,7 +28,12 @@ export default function RootLayout({
     <html lang="ja" suppressHydrationWarning={true}>
       <body className={zen.className}>
         <NextuiThemeProviders>
-          <Suspense fallback={<Loading />}>{children}</Suspense>
+          <NextuiNavbar />
+          <MotionWrapper>
+            <Suspense fallback={<Loading />}>
+              <main className="min-h-screen">{children}</main>
+            </Suspense>
+          </MotionWrapper>
         </NextuiThemeProviders>
       </body>
     </html>
