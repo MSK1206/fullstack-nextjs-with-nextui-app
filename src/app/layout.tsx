@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Zen_Antique } from 'next/font/google';
+import { EB_Garamond } from 'next/font/google';
 import { NextuiThemeProviders } from '@/app/components/providers/NextuiThemeProviders';
 import { Suspense } from 'react';
 import Loading from './loading';
@@ -7,7 +7,7 @@ import './globals.css';
 import NextuiNavbar from './components/atomic/organisms/NextuiNavbar';
 import MotionWrapper from './components/providers/MotionWrapper';
 
-const zen = Zen_Antique({
+const garamond = EB_Garamond({
   weight: '400',
   display: 'swap',
   preload: true,
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja" suppressHydrationWarning={true}>
-      <body className={zen.className}>
+      <body className={garamond.className}>
         <NextuiThemeProviders>
           <NextuiNavbar />
           <MotionWrapper>
